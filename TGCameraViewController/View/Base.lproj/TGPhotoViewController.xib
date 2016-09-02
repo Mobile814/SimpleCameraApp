@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGPhotoViewController">
+            <connections>
+                <outlet property="defaultFilterButton" destination="9jP-uX-c4U" id="AEq-cV-Ah8"/>
+                <outlet property="filterView" destination="mfq-V7-07J" id="Pf2-0x-IU7"/>
+                <outlet property="m_pBackword" destination="S1X-Nu-7gJ" id="kHi-au-sIo"/>
+                <outlet property="m_pCaptionText" destination="h7c-yl-VAE" id="AjG-lP-ASq"/>
+                <outlet property="m_pCationLabel" destination="UdW-xf-2Sl" id="LGD-UZ-bHn"/>
+                <outlet property="m_pEditCaption" destination="Edd-sE-L35" id="jB2-aM-L99"/>
+                <outlet property="m_pEditColor" destination="8YW-u7-Erz" id="0lT-90-Dom"/>
+                <outlet property="m_pImage1" destination="Mbc-Eg-lRY" id="t6C-5f-hU5"/>
+                <outlet property="m_pImagePicker" destination="Dot-ez-JBM" id="e5A-no-fmu"/>
+                <outlet property="m_pSharingClose" destination="EAg-Ao-DIr" id="9kd-bD-cWV"/>
+                <outlet property="m_pSharingView" destination="oVa-Qq-3nR" id="I9U-BU-qHl"/>
+                <outlet property="photoView" destination="AgS-wg-ici" id="7RM-EQ-xh7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" userLabel="View Controller">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRi-bL-lCE" userLabel="Top View - Top Banner View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-nz-mqT" userLabel="Actions View">
+                    <rect key="frame" x="0.0" y="380" width="320" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgS-wg-ici" userLabel="Photo View - Main UIImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
+                    <color key="backgroundColor" red="0.24067185730000001" green="1" blue="0.04678913212" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAy-eH-OU9" userLabel="Back - goPreviousePage Button">
+                    <rect key="frame" x="4" y="15" width="44" height="44"/>
+                    <state key="normal" image="CameraClose">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backTapped" destination="-1" eventType="touchUpInside" id="fwF-J8-ieM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YW-u7-Erz" userLabel="selectedColor - Color Selecting Button">
+                    <rect key="frame" x="537" y="15" width="48" height="41"/>
+                    <state key="normal" image="CameraFilter">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onSelectColor:" destination="-1" eventType="touchUpInside" id="b33-uj-p2I"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-sE-L35" userLabel="T - Caption Edit Button">
+                    <rect key="frame" x="490" y="15" width="44" height="38"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                    <state key="normal" title="T">
+                        <color key="titleColor" red="0.82352948188781738" green="0.34509804844856262" blue="0.050980396568775177" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onEditCaptionText:" destination="-1" eventType="touchUpInside" id="2md-sf-lDT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpj-DE-bNg" userLabel="Button - Share Label">
+                    <rect key="frame" x="539" y="764" width="42" height="42"/>
+                    <state key="normal" image="CameraGrid">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onShareImage:" destination="-1" eventType="touchUpInside" id="hF9-uZ-ApF"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdW-xf-2Sl" userLabel="Label - Caption Label">
+                    <rect key="frame" x="80" y="205" width="20" height="59"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="59" id="EDb-BZ-5AY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7c-yl-VAE" userLabel="Round Style Text Field - Caption TextField">
+                    <rect key="frame" x="180" y="180" width="240" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="LxA-RZ-qQt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <imageView userInteractionEnabled="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="colorPicker.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dot-ez-JBM" userLabel="colorPicker.png - Color Pickup">
+                    <rect key="frame" x="551" y="90" width="21" height="220"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mbc-Eg-lRY" userLabel="Image View - Temp Coloring">
+                    <rect key="frame" x="15" y="781" width="240" height="31"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1X-Nu-7gJ" userLabel="back - Draw Back">
+                    <rect key="frame" x="468" y="20" width="81" height="26"/>
+                    <state key="normal" title="back">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onBackword:" destination="-1" eventType="touchUpInside" id="xtq-fP-9ow"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oVa-Qq-3nR" userLabel="Image View - Sharing Image">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="820"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAg-Ao-DIr" userLabel="Button - Share View Close">
+                    <rect key="frame" x="4" y="15" width="44" height="44"/>
+                    <state key="normal" image="CameraClose">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onShareClose:" destination="-1" eventType="touchUpInside" id="06X-rP-EsO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstItem="h7c-yl-VAE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="180" id="01z-Dc-NZ0"/>
+                <constraint firstItem="WAy-eH-OU9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="0mI-yQ-s80"/>
+                <constraint firstItem="oVa-Qq-3nR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="473-vm-ndZ"/>
+                <constraint firstItem="rRi-bL-lCE" firstAttribute="top" secondItem="AgS-wg-ici" secondAttribute="top" id="48y-B7-ONb"/>
+                <constraint firstItem="Dot-ez-JBM" firstAttribute="top" secondItem="8YW-u7-Erz" secondAttribute="bottom" constant="28" id="53A-On-hn7"/>
+                <constraint firstItem="8YW-u7-Erz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="5Ff-fb-upK"/>
+                <constraint firstItem="EAg-Ao-DIr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="6PQ-px-HX3"/>
+                <constraint firstItem="8YW-u7-Erz" firstAttribute="leading" secondItem="Edd-sE-L35" secondAttribute="trailing" constant="3" id="9tf-NE-5JW"/>
+                <constraint firstItem="ubt-nz-mqT" firstAttribute="trailing" secondItem="rRi-bL-lCE" secondAttribute="trailing" id="D8U-kf-5oL"/>
+                <constraint firstAttribute="bottom" secondItem="rRi-bL-lCE" secondAttribute="bottom" constant="760" id="DVK-tu-oPA"/>
+                <constraint firstAttribute="trailing" secondItem="ubt-nz-mqT" secondAttribute="trailing" constant="280" id="DsS-KM-lKk"/>
+                <constraint firstAttribute="bottom" secondItem="Jpj-DE-bNg" secondAttribute="bottom" constant="14" id="FMd-f8-Bnz"/>
+                <constraint firstItem="UdW-xf-2Sl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="205" id="LGn-yo-Rtb"/>
+                <constraint firstItem="AgS-wg-ici" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LKI-qB-dJP"/>
+                <constraint firstAttribute="trailing" secondItem="AgS-wg-ici" secondAttribute="trailing" id="Nu5-UW-DGN"/>
+                <constraint firstItem="UdW-xf-2Sl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="OQt-Qm-EL7"/>
+                <constraint firstAttribute="centerX" secondItem="h7c-yl-VAE" secondAttribute="centerX" id="OrU-Di-Ses"/>
+                <constraint firstItem="oVa-Qq-3nR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="P5X-wt-kJV"/>
+                <constraint firstItem="rRi-bL-lCE" firstAttribute="leading" secondItem="oVa-Qq-3nR" secondAttribute="leading" id="R31-G5-1e5"/>
+                <constraint firstItem="WAy-eH-OU9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="SZ6-Rg-gBe"/>
+                <constraint firstAttribute="bottom" secondItem="ubt-nz-mqT" secondAttribute="bottom" constant="390" id="SjC-dS-SFp"/>
+                <constraint firstAttribute="bottom" secondItem="AgS-wg-ici" secondAttribute="bottom" id="TXS-Bo-uLR"/>
+                <constraint firstAttribute="trailing" secondItem="8YW-u7-Erz" secondAttribute="trailing" constant="15" id="Y4h-2Z-1af"/>
+                <constraint firstItem="Edd-sE-L35" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="ZRH-La-Muo"/>
+                <constraint firstAttribute="centerY" secondItem="oVa-Qq-3nR" secondAttribute="centerY" id="b4l-uu-vr6"/>
+                <constraint firstAttribute="centerX" secondItem="oVa-Qq-3nR" secondAttribute="centerX" id="dCI-DN-yXg"/>
+                <constraint firstItem="ubt-nz-mqT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="380" id="dKe-rT-Ikr"/>
+                <constraint firstItem="h7c-yl-VAE" firstAttribute="leading" secondItem="UdW-xf-2Sl" secondAttribute="trailing" constant="80" id="nZ7-S7-ciM"/>
+                <constraint firstAttribute="trailing" secondItem="S1X-Nu-7gJ" secondAttribute="trailing" constant="51" id="nhF-QA-VMj"/>
+                <constraint firstAttribute="trailing" secondItem="oVa-Qq-3nR" secondAttribute="trailing" id="tIJ-lp-VBv"/>
+                <constraint firstItem="EAg-Ao-DIr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="u0P-ta-RIY"/>
+                <constraint firstItem="S1X-Nu-7gJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="vu3-Pv-T4q"/>
+                <constraint firstAttribute="trailing" secondItem="Jpj-DE-bNg" secondAttribute="trailing" constant="19" id="x1I-8h-Pvr"/>
+                <constraint firstAttribute="trailing" secondItem="Dot-ez-JBM" secondAttribute="trailing" constant="28" id="xVR-fP-g25"/>
+                <constraint firstItem="AgS-wg-ici" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xVr-Lf-zd1"/>
+                <constraint firstItem="rRi-bL-lCE" firstAttribute="leading" secondItem="ubt-nz-mqT" secondAttribute="leading" id="zIc-eC-Pcn"/>
+                <constraint firstAttribute="bottom" secondItem="oVa-Qq-3nR" secondAttribute="bottom" id="zct-KJ-cyF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="268" y="992"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="mfq-V7-07J" userLabel="Filter View" customClass="TGCameraFilterView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gn-sg-KCX" userLabel="Center View">
+                    <rect key="frame" x="121" y="0.0" width="360" height="110"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQZ-zM-IfK" userLabel="Sature">
+                            <rect key="frame" x="106" y="19" width="70" height="72"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="satureFilterTapped:" destination="-1" eventType="touchUpInside" id="uc7-sV-qmz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evv-qG-miu" userLabel="Curve">
+                            <rect key="frame" x="181" y="19" width="70" height="72"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="curveFilterTapped:" destination="-1" eventType="touchUpInside" id="gKy-GF-2ST"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HUMM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9v-KN-bMh">
+                            <rect key="frame" x="123" y="80" width="37" height="15"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                            <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NORMAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPz-Ij-Ac3">
+                            <rect key="frame" x="41" y="80" width="50" height="15"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                            <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DELICIOUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e30-Rf-Y72">
+                            <rect key="frame" x="186" y="80" width="61" height="15"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                            <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YUPI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4B-e1-fIM">
+                            <rect key="frame" x="273" y="80" width="36" height="15"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="11"/>
+                            <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfY-Gx-tnh" userLabel="Vignette">
+                            <rect key="frame" x="256" y="19" width="70" height="72"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="vignetteFilterTapped:" destination="-1" eventType="touchUpInside" id="ZkO-wF-q3M"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="360" id="Po7-cs-Dk8"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jP-uX-c4U" userLabel="Default">
+                    <rect key="frame" x="152" y="19" width="70" height="72"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="defaultFilterTapped:" destination="-1" eventType="touchUpInside" id="kSi-iK-ang"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6gn-sg-KCX" secondAttribute="bottom" id="Ooj-u4-8Wl"/>
+                <constraint firstAttribute="centerX" secondItem="6gn-sg-KCX" secondAttribute="centerX" constant="-1" id="iXv-9u-ryF"/>
+                <constraint firstAttribute="centerY" secondItem="6gn-sg-KCX" secondAttribute="centerY" id="pPB-zs-Zju"/>
+                <constraint firstItem="6gn-sg-KCX" firstAttribute="top" secondItem="mfq-V7-07J" secondAttribute="top" id="vi0-m7-qcO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="384" y="678"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CameraClose" width="26" height="26"/>
+        <image name="CameraFilter" width="41" height="41"/>
+        <image name="CameraGrid" width="26" height="26"/>
+        <image name="colorPicker.png" width="51" height="257"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

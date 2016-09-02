@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Eda-Vg-Qoc">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="L5q-as-T2h">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Eda-Vg-Qoc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GDi-yo-0O4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QRX-dV-Qlj" kind="relationship" relationship="rootViewController" id="hte-FT-hcg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BU4-yI-zPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="96"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="AvY-Ed-Mqp">
+            <objects>
+                <viewController id="QRX-dV-Qlj" customClass="TGInitialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JA7-oE-oFj"/>
+                        <viewControllerLayoutGuide type="bottom" id="ssR-rD-Gn3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f7u-Ek-YX3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo area" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-4U-p9y">
+                                <rect key="frame" x="85" y="229" width="151" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="151" id="M3j-J1-tWE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSx-0Y-doC">
+                                <rect key="frame" x="0.0" y="64" width="320" height="330"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vz-WL-Max" userLabel="Options View">
+                                <rect key="frame" x="0.0" y="394" width="320" height="86"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i43-vW-xQp">
+                                        <rect key="frame" x="0.0" y="18" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="nUE-Ja-jPE"/>
+                                        </constraints>
+                                        <state key="normal" title="Take photo">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePhotoTapped" destination="QRX-dV-Qlj" eventType="touchUpInside" id="PjQ-Uy-FyH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9647059440612793" green="0.9647059440612793" blue="0.9647059440612793" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="Lge-rB-1oe"/>
+                                    <constraint firstItem="i43-vW-xQp" firstAttribute="top" secondItem="2vz-WL-Max" secondAttribute="top" constant="18" id="YXV-qM-2CX"/>
+                                    <constraint firstItem="i43-vW-xQp" firstAttribute="leading" secondItem="2vz-WL-Max" secondAttribute="leading" id="aYu-ik-mPB"/>
+                                    <constraint firstAttribute="bottom" secondItem="i43-vW-xQp" secondAttribute="bottom" constant="18" id="jqE-uc-yjp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZSx-0Y-doC" secondAttribute="trailing" id="0ps-lu-iKs"/>
+                            <constraint firstItem="ZSx-0Y-doC" firstAttribute="leading" secondItem="f7u-Ek-YX3" secondAttribute="leading" id="4Am-Tl-i3m"/>
+                            <constraint firstItem="ssR-rD-Gn3" firstAttribute="top" secondItem="2vz-WL-Max" secondAttribute="bottom" id="7vo-Lw-Sxc"/>
+                            <constraint firstAttribute="trailing" secondItem="2vz-WL-Max" secondAttribute="trailing" id="DZa-MX-ixt"/>
+                            <constraint firstItem="2vz-WL-Max" firstAttribute="top" secondItem="ZSx-0Y-doC" secondAttribute="bottom" id="IXm-86-ZcZ"/>
+                            <constraint firstItem="ZSx-0Y-doC" firstAttribute="top" secondItem="JA7-oE-oFj" secondAttribute="bottom" id="P6P-bS-PKG"/>
+                            <constraint firstAttribute="centerY" secondItem="yqs-4U-p9y" secondAttribute="centerY" id="Teo-XC-VN6"/>
+                            <constraint firstItem="2vz-WL-Max" firstAttribute="leading" secondItem="f7u-Ek-YX3" secondAttribute="leading" id="brK-HF-3He"/>
+                            <constraint firstAttribute="centerX" secondItem="yqs-4U-p9y" secondAttribute="centerX" id="o0g-ph-CHr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="w4g-fM-4fa"/>
+                    <connections>
+                        <outlet property="photoView" destination="ZSx-0Y-doC" id="KhV-t5-DCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krk-pN-rQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="96"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <color key="tintColor" red="1" green="0.35686275360000003" blue="0.0039215688589999999" alpha="1" colorSpace="deviceRGB"/>
+</document>
